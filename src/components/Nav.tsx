@@ -1,9 +1,19 @@
 import React from 'react';
-import { Flex, Spacer, Link, Stack, Box, HStack } from '@chakra-ui/react';
+import {
+  Flex,
+  Spacer,
+  Link,
+  Stack,
+  Box,
+  HStack,
+  useColorMode,
+} from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { BsLightningFill } from 'react-icons/bs';
+import { BsMoon, BsSun } from 'react-icons/bs';
 
 export const Nav = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
   return (
     <Box
       display='flex'
@@ -40,8 +50,12 @@ export const Nav = () => {
             List
           </Link>
         </Flex>
-        <Box>
-          <BsLightningFill color='white' />
+        <Box onClick={toggleColorMode}>
+          {colorMode === 'light' ? (
+            <BsSun color='white' />
+          ) : (
+            <BsMoon color='white' />
+          )}
         </Box>
       </HStack>
     </Box>
