@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Flex,
-  Spacer,
-  Link,
-  Stack,
-  Box,
-  HStack,
-  useColorMode,
-} from '@chakra-ui/react';
+import { Flex, Link, Box, HStack, useColorMode } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { BsLightningFill } from 'react-icons/bs';
 import { BsMoon, BsSun } from 'react-icons/bs';
