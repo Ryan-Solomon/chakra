@@ -14,7 +14,7 @@ export const Nav = () => {
       bg='gray.800'
       color='white'
       p={2}
-      boxShadow='lg'
+      boxShadow={colorMode === 'light' ? 'lg' : 'dark-lg'}
     >
       <HStack mx='auto' justify='center' spacing={40}>
         <Box>
@@ -44,9 +44,9 @@ export const Nav = () => {
         </Flex>
         <Box onClick={toggleColorMode}>
           {colorMode === 'light' ? (
-            <BsSun color='white' />
-          ) : (
             <BsMoon color='white' />
+          ) : (
+            <BsSun color='white' />
           )}
         </Box>
       </HStack>
