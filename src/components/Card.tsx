@@ -1,4 +1,5 @@
-import { Box, Flex, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Button, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import { AiFillStar } from 'react-icons/ai';
 import React from 'react';
 
 export const Card = () => {
@@ -20,9 +21,9 @@ export const Card = () => {
         borderBottomRightRadius={0}
         borderBottomLeftRadius={0}
       />
-      <Stack spacing={3} p={3} direction='column'>
+      <Stack spacing={4} p={4} direction='column'>
         <Text fontSize={12}>Introduction to Chakra UI</Text>
-        <Text as='p' fontSize={8}>
+        <Text noOfLines={4} as='p' fontSize={8}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi
           consectetur placeat cupiditate! Numquam nihil iusto cum porro nisi
           consequuntur quasi vitae cupiditate dolores provident nobis laudantium
@@ -30,6 +31,25 @@ export const Card = () => {
           culpa? Molestias fuga, autem, velit impedit architecto, dicta unde
           incidunt quo eaque est sit a.
         </Text>
+        <HStack justify='space-between'>
+          <Text>$20</Text>
+          <HStack>
+            <AiFillStar color='white' />
+            <AiFillStar color='white' />
+            <AiFillStar color='white' />
+            <AiFillStar color='white' />
+            <Text>Reviews</Text>
+          </HStack>
+        </HStack>
+        <Button
+          variant='outline'
+          p={5}
+          fontSize={10}
+          colorScheme='teal'
+          size='sm'
+        >
+          Sign Up Now
+        </Button>
       </Stack>
     </Box>
   );
