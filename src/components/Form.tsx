@@ -7,9 +7,20 @@ import {
   Input,
   Stack,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 
 export const Form = () => {
+  const [showLoadingSpinner, setShowLoadingSpinner] = useState(false);
+
+  function showSubmitSpinner() {
+    setShowLoadingSpinner(true);
+    setTimeout(() => {
+      setShowLoadingSpinner(false);
+    }, 1000);
+  }
+
+  // Hook up to useHookForm
+
   return (
     <Box maxW='50%' mx='auto' mt={20}>
       <Stack spacing={8}>
@@ -33,7 +44,15 @@ export const Form = () => {
           <FormLabel mb={3}>Confirm Password</FormLabel>
           <Input type='password' />
         </FormControl>
-        <Button p={5} fontSize={10} colorScheme='teal' size='sm'>
+        <Button
+          variant='outline'
+          p={5}
+          fontSize={10}
+          colorScheme='teal'
+          size='sm'
+          isLoading={showLoadingSpinner}
+          onClick={showSubmitSpinner}
+        >
           Submit
         </Button>
       </Stack>
