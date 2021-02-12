@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -32,6 +33,9 @@ export const Form = () => {
           <FormLabel mb={3}>Confirm Password</FormLabel>
           <Input type='password' />
         </FormControl>
+        <Button p={5} fontSize={10} colorScheme='teal' size='sm'>
+          Submit
+        </Button>
       </Stack>
     </Box>
   );
