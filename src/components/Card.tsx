@@ -1,11 +1,20 @@
-import { Box, Button, HStack, Image, Stack, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  HStack,
+  Image,
+  Stack,
+  Text,
+  useColorMode,
+} from '@chakra-ui/react';
 import { AiFillStar } from 'react-icons/ai';
 import React from 'react';
 
 export const Card = () => {
+  const { colorMode } = useColorMode();
   return (
     <Box
-      background='gray.700'
+      background={colorMode === 'light' ? 'white' : 'gray.900'}
       mx='auto'
       mt={10}
       width='200px'
@@ -34,10 +43,10 @@ export const Card = () => {
         <HStack justify='space-between'>
           <Text>$20</Text>
           <HStack>
-            <AiFillStar color='white' />
-            <AiFillStar color='white' />
-            <AiFillStar color='white' />
-            <AiFillStar color='white' />
+            <AiFillStar color={colorMode === 'light' ? 'black' : 'white'} />
+            <AiFillStar color={colorMode === 'light' ? 'black' : 'white'} />
+            <AiFillStar color={colorMode === 'light' ? 'black' : 'white'} />
+            <AiFillStar color={colorMode === 'light' ? 'black' : 'white'} />
             <Text>Reviews</Text>
           </HStack>
         </HStack>
