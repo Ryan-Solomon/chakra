@@ -1,9 +1,10 @@
 import React from 'react';
+import { Card } from '../components/Card';
 
 export const CardPage = () => {
   return (
     <>
-      <h1>Card</h1>
+      <Card />
     </>
   );
 };
